@@ -1,0 +1,250 @@
+/* App.css - Global Styles for Computer Bite Technologies */
+
+/* Professional Security Hardware Color Palette */
+:root {
+  /* Base Colors */
+  --pure-white: #FFFFFF;
+  --soft-white: #FCFCFC;
+  --light-gray: #F8F9FA;
+  --neutral-gray: #F1F3F4;
+  
+  /* Primary Security Palette - Deep Professional Blues */
+  --primary-dark: #1A237E;
+  --primary-blue: #283593;
+  --primary-light: #3F51B5;
+  --accent-blue: #5C6BC0;
+  
+  /* Secondary Palette - Modern Slate */
+  --slate-dark: #263238;
+  --slate-medium: #37474F;
+  --slate-light: #546E7A;
+  --slate-soft: #78909C;
+  
+  /* Accent Colors - Technology Inspired */
+  --tech-green: #00C853;
+  --tech-cyan: #00BCD4;
+  --warning-amber: #FF8F00;
+  --error-red: #D32F2F;
+  
+  /* Text Colors */
+  --text-primary: #212121;
+  --text-secondary: #424242;
+  --text-muted: #757575;
+  --text-light: #9E9E9E;
+  
+  /* Border Colors */
+  --border-light: #E0E0E0;
+  --border-medium: #BDBDBD;
+  --border-dark: #9E9E9E;
+  
+  /* Professional Shadows */
+  --shadow-soft: 0 2px 8px rgba(26, 35, 126, 0.08);
+  --shadow-medium: 0 4px 16px rgba(26, 35, 126, 0.12);
+  --shadow-strong: 0 8px 24px rgba(26, 35, 126, 0.16);
+  --shadow-heavy: 0 12px 32px rgba(26, 35, 126, 0.20);
+  
+  /* Gradient Combinations */
+  --gradient-primary: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+  --gradient-secondary: linear-gradient(135deg, var(--slate-dark), var(--slate-medium));
+  --gradient-accent: linear-gradient(135deg, var(--tech-cyan), var(--accent-blue));
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--soft-white);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.App {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  position: relative;
+}
+
+main {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* Global Typography */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--primary-blue);
+}
+
+.text-accent {
+  color: var(--tech-cyan);
+}
+
+.bg-primary {
+  background-color: var(--light-gray);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-strong);
+}
+
+.btn-secondary {
+  background: var(--gradient-secondary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-strong);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Universal Container for Consistent Spacing */
+.page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  min-height: calc(100vh - 90px); /* Account for navbar height */
+  padding-top: 120px; /* Space from navbar */
+}
+
+.section-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+}
+
+/* Special container for full-height sections like homepage */
+.section-container.full-height {
+  padding-top: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Common page content spacing */
+.page-container h1 {
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.page-container p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Responsive padding adjustments */
+@media (max-width: 1024px) {
+  .page-container,
+  .section-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-container,
+  .section-container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .page-container {
+    padding-top: 100px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-container,
+  .section-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-container,
+  .section-container {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  
+  .page-container {
+    padding-top: 90px;
+  }
+}
