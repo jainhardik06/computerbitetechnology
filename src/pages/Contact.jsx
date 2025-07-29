@@ -117,21 +117,20 @@ const Contact = () => {
         </div> {/* End main-grid-container */}
       </section>
 
-      {/* Embedded Map Section */}
-      <section className="map-section">
+<section className="map-section">
         <div className="contact-container">
           <h2 className="section-heading map-heading">Our Location</h2>
           <p className="section-subheading map-subheading">Find our office on the map for easy navigation.</p>
           <div className="map-container-inner">
             <iframe
-              src="https://www.google.com/maps?ll=26.902805,75.746805&z=18&t=m&hl=en&gl=IN&mapclient=embed&cid=14116636492228975632"
-              width="100%"
-              height="450"
-              style={{ border: 0 }}
-              allowFullScreen=""
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3381.973791265414!2d75.74423017522402!3d26.90280507665311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db5533b5a8829%3A0xc3e85e18b69fdc10!2sComputer%20Bite%20Technology%20Pvt%20Ltd!5e1!3m2!1sen!2sin!4v1753748157589!5m2!1sen!2sin" // Updated src from user input
+              width="100%" // Retaining responsive width
+              height="450" // Retaining responsive height consistent with CSS
+              style={{ border: 0 }} // Corrected JSX style syntax
+              allowFullScreen={true} // Corrected JSX camelCase for boolean attribute
               loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Our Location - Alwar, Rajasthan, India"
+              referrerPolicy="no-referrer-when-downgrade" // Corrected JSX camelCase
+              title="Our Location - Jaipur, Rajasthan, India" // Updated title to Jaipur
             ></iframe>
           </div>
         </div>
