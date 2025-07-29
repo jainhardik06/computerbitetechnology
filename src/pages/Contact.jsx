@@ -124,7 +124,7 @@ const Contact = () => {
           <p className="section-subheading map-subheading">Find our office on the map for easy navigation.</p>
           <div className="map-container-inner">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550422.04602525!2d70.97022247781033!3d26.56157813583568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39611f7ff3b497e1%3A0xb36f8745c1d6b08e!2sAlwar%2C%20Rajasthan!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps?ll=26.902805,75.746805&z=18&t=m&hl=en&gl=IN&mapclient=embed&cid=14116636492228975632"
               width="100%"
               height="450"
               style={{ border: 0 }}
