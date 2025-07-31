@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import ProductDetails from './pages/ProductDetails';
-import AboutUs from './pages/AboutUs';
-import Contact from './pages/Contact';
-import Support from './pages/Support';
-import './App.css'
+import Home from './pages/Home.jsx';
+import Products from './pages/Products.jsx';
+import CategoryPage from './pages/CategoryPage.jsx'; // New component for category listings
+import ProductDetails from './pages/ProductDetails.jsx';
+import AboutUs from './pages/AboutUs.jsx';
+import Contact from './pages/Contact.jsx';
+import Support from './pages/Support.jsx';
+import './App.css';
 
 function App() {
   return (
@@ -17,8 +18,12 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            
+            {/* The new multi-level product routing structure */}
             <Route path="/products" element={<Products />} />
-            <Route path="/product/:productId" element={<ProductDetails />} />
+            <Route path="/products/category/:categoryId" element={<CategoryPage />} /> 
+            <Route path="/products/details/:productId" element={<ProductDetails />} />
+            
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/support" element={<Support />} />
@@ -26,7 +31,7 @@ function App() {
         </main>
       </div>
     </Router>
-  )
+  );
 }
 
-export default App
+export default App;

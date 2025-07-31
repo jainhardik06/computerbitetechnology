@@ -172,7 +172,7 @@
 .title-main {
   font-size: 3.5rem;
   font-weight: 700;
-  color: #1f2937;
+  color: #1f2937 !important;
   line-height: 1.1;
   letter-spacing: -0.02em;
 }
@@ -180,7 +180,7 @@
 .title-accent {
   font-size: 3.5rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #1e40af, #3b82f6);
+  background: linear-gradient(90deg, #1e40af, #3b82f6) ;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
