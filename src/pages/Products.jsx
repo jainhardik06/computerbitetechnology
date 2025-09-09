@@ -140,21 +140,21 @@ const Products = () => {
                 </div>
             </section>
 
-            {/* CTA Section */}
-            <section className="cta-section">
-              <div className="container">
-                <div className="cta-content">
-                  <h2 className="cta-title">Ready to Secure Your Business?</h2>
-                  <p className="cta-description">
-                    Get a personalized security consultation and discover how our solutions can protect your business
-                  </p>
-                  <div className="cta-buttons">
-                    <button className="btn btn-white">Schedule Free Consultation</button>
-                    <button className="btn btn-outline">View Our Portfolio</button>
-                  </div>
-                </div>
-              </div>
-            </section>
+                        {/* CTA Section */}
+                        <section className="cta-section">
+                            <div className="container">
+                                <div className="cta-content">
+                                    <h2 className="cta-title">Ready to Secure Your Business?</h2>
+                                    <p className="cta-description">
+                                        Get a personalized security consultation and discover how our solutions can protect your business
+                                    </p>
+                                    <div className="cta-buttons">
+                                        <Link to="/contact#contact-form" className="btn btn-white">Schedule Free Consultation</Link>
+                                        <Link to="/products" className="btn btn-outline">View Our Portfolio</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
 
             <Footer />
         </div>

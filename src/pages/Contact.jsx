@@ -1,8 +1,11 @@
 import React from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 import Footer from '../components/FooterNew';
 import './Contact.css';
 
 const Contact = () => {
+  const [state, handleSubmit] = useForm('mdklbekb');
+  const succeeded = state.succeeded;
   return (
     <div className="contact-page">
       {/* Header Section */}
@@ -33,7 +36,7 @@ const Contact = () => {
                     </div>
                     <div className="info-text">
                         <h3>Visit Us</h3>
-                        <p>123 Security Avenue, Tech City, Alwar, Rajasthan, India 301001</p>
+                        <p>66, DR. Habib Marg, Gandhi Path, Jaipur-302021, Rajasthan, India</p>
                         <a href="https://www.google.com/maps/dir/?api=1&destination=123+Security+Avenue,+Tech+City,+Alwar,+Rajasthan,+India+301001" target="_blank" rel="noopener noreferrer" className="info-cta">Get Directions</a>
                     </div>
                 </div>
@@ -47,8 +50,7 @@ const Contact = () => {
                     </div>
                     <div className="info-text">
                         <h3>Call Us</h3>
-                        <p>Sales: <a href="tel:+919876543210">+91 98765 43210</a></p>
-                        <p>Support: <a href="tel:+919988776655">+91 99887 76655</a></p>
+                        <p>Support: <a href="tel:+918619429514">+9186 194 29514</a></p>
                         <p className="timing-text">Mon-Fri, 9 AM - 6 PM IST</p>
                     </div>
                 </div>
@@ -63,7 +65,7 @@ const Contact = () => {
                     </div>
                     <div className="info-text">
                         <h3>Email Us</h3>
-                        <p><a href="mailto:info@computerbite.com">info@computerbite.com</a></p>
+                        <p><a href="mailto:info@computerbite.com">computerbitejpr@gmail.com</a></p>
                         <p className="timing-text">We respond within 24 hours.</p>
                     </div>
                 </div>
@@ -78,41 +80,50 @@ const Contact = () => {
           </div> {/* End contact-info-column */}
 
           {/* Right Column: Contact Form */}
-          <div className="contact-form-column">
+          <div className="contact-form-column" id="contact-form">
             <h2 className="column-heading">Send Us a Message</h2>
             <p className="column-subheading">Fill out the form below, and we'll get back to you promptly.</p>
-            <form className="contact-form">
-              <div className="form-group">
-                <label htmlFor="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required />
+            {succeeded ? (
+              <div className="form-success" role="status">
+                <h3>Message Sent Successfully</h3>
+                <p>Thank you for contacting us. We will respond shortly.</p>
               </div>
-              <div className="form-group">
-                <label htmlFor="email">Business Email</label>
-                <input type="email" id="email" name="email" placeholder="you@example.com" required />
-              </div>
-              <div className="form-group">
-                <label htmlFor="phone">Phone Number (Optional)</label>
-                <input type="tel" id="phone" name="phone" placeholder="+91 XXXXXXXXXX" />
-              </div>
-              <div className="form-group">
-                <label htmlFor="company">Company Name (Optional)</label>
-                <input type="text" id="company" name="company" placeholder="Your Company" />
-              </div>
-              <div className="form-group full-width">
-                <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="e.g., Security Consultation Request" required />
-              </div>
-              <div className="form-group full-width">
-                <label htmlFor="message">Your Message</label>
-                <textarea id="message" name="message" rows="6" placeholder="Tell us more about your needs or questions..." required></textarea>
-              </div>
-              <button type="submit" className="submit-form-btn">
-                <span>Send Message</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </button>
-            </form>
+            ) : (
+              <form className="contact-form" onSubmit={handleSubmit} method="POST" action="https://formspree.io/f/mdklbekb">
+                <div className="form-group">
+                  <label htmlFor="name">Full Name</label>
+                  <input type="text" id="name" name="name" placeholder="Your Name" required />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="email">Business Email</label>
+                  <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="phone">Phone Number (Optional)</label>
+                  <input type="tel" id="phone" name="phone" placeholder="+91 XXXXXXXXXX" />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="company">Company Name (Optional)</label>
+                  <input type="text" id="company" name="company" placeholder="Your Company" />
+                </div>
+                <div className="form-group full-width">
+                  <label htmlFor="subject">Subject</label>
+                  <input type="text" id="subject" name="subject" placeholder="e.g., Security Consultation Request" required />
+                </div>
+                <div className="form-group full-width">
+                  <label htmlFor="message">Your Message</label>
+                  <textarea id="message" name="message" rows="6" placeholder="Tell us more about your needs or questions..." required></textarea>
+                  <ValidationError prefix="Message" field="message" errors={state.errors} />
+                </div>
+                <button type="submit" className="submit-form-btn" disabled={state.submitting}>
+                  <span>{state.submitting ? 'Sending...' : 'Send Message'}</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </button>
+              </form>
+            )}
           </div> {/* End contact-form-column */}
         </div> {/* End main-grid-container */}
       </section>

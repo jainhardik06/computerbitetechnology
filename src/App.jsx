@@ -8,6 +8,10 @@ import ProductDetails from './pages/ProductDetails.jsx';
 import AboutUs from './pages/AboutUs.jsx';
 import Contact from './pages/Contact.jsx';
 import Support from './pages/Support.jsx';
+import Privacy from './pages/legal/Privacy.jsx';
+import Terms from './pages/legal/Terms.jsx';
+import Cookies from './pages/legal/Cookies.jsx';
+import Sitemap from './pages/legal/Sitemap.jsx';
 import './App.css';
 
 function App() {
@@ -27,6 +31,10 @@ function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/support" element={<Support />} />
+            <Route path="/privacy" element={<Privacy />} />
+            <Route path="/terms" element={<Terms />} />
+            <Route path="/cookies" element={<Cookies />} />
+            <Route path="/sitemap" element={<Sitemap />} />
           </Routes>
         </main>
       </div>

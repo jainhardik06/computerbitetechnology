@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'; // Import useState and useEffect
+import { Link } from 'react-router-dom';
 import Footer from '../components/FooterNew';
 import './About.css';
 
@@ -212,8 +213,8 @@ const About = () => {
               Get a personalized security consultation and discover how our solutions can protect your business
             </p>
             <div className="cta-buttons">
-              <button className="btn btn-white">Schedule Free Consultation</button>
-              <button className="btn btn-outline">View Our Portfolio</button>
+              <Link to="/contact#contact-form" className="btn btn-white">Schedule Free Consultation</Link>
+              <Link to="/products" className="btn btn-outline">View Our Portfolio</Link>
             </div>
           </div>
         </div>

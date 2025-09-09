@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/FooterNew';
 import './Home.css';
 
@@ -117,8 +118,8 @@ const Home = () => {
                   </div>
                   
                   <div className="action-buttons">
-                    <button className="btn btn-primary">Get Started</button>
-                    <button className="btn btn-secondary">Explore Products</button>
+                    <Link to="/contact#contact-form" className="btn btn-primary">Get Started</Link>
+                    <Link to="/products" className="btn btn-secondary">Explore Products</Link>
                   </div>
                 </div>
               </div>
@@ -163,8 +164,8 @@ const Home = () => {
                 </div>
                 
                 <div className="action-buttons">
-                  <button className="btn btn-primary">Get Started</button>
-                  <button className="btn btn-secondary">Explore Products</button>
+                  <Link to="/contact#contact-form" className="btn btn-primary">Get Started</Link>
+                  <Link to="/products" className="btn btn-secondary">Explore Products</Link>
                 </div>
               </div>
             </div>
@@ -298,7 +299,7 @@ const Home = () => {
                         <span key={idx} className="feature-tag">{feature}</span>
                       ))}
                     </div>
-                    <button className="product-cta-btn">Learn More</button>
+                    <Link to={`/products/category/${product.name.toLowerCase().includes('cctv') ? 'cctv' : product.name.toLowerCase().includes('biometric') || product.name.toLowerCase().includes('access') ? 'attendance-access' : product.name.toLowerCase().includes('currency') ? 'currency' : product.name.toLowerCase().includes('barrier') ? 'entrance' : 'products'}`} className="product-cta-btn">Learn More</Link>
                   </div>
                 </div>
               ))}
@@ -519,8 +520,8 @@ const Home = () => {
                 Get a personalized security consultation and discover how our solutions can protect your business
               </p>
               <div className="cta-buttons">
-                <button className="btn btn-white">Schedule Free Consultation</button>
-                <button className="btn btn-outline">View Our Portfolio</button>
+                <Link to="/contact#contact-form" className="btn btn-white">Schedule Free Consultation</Link>
+                <Link to="/products" className="btn btn-outline">View Our Portfolio</Link>
               </div>
             </div>
           </div>

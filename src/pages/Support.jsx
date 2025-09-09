@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Footer from '../components/FooterNew';
 import './Support.css';
 
@@ -96,10 +97,10 @@ const Support = () => {
               </div>
               <h3>Call Our Support Line</h3>
               <p>For immediate technical assistance.</p>
-              <p className="support-number">Sales: <a href="tel:+919876543210">+91 98765 43210</a></p>
-              <p className="support-number">Support: <a href="tel:+919988776655">+91 99887 76655</a></p>
+              <p className="support-number">Sales: <a href="tel:+918619429514">+9186 194 29514</a></p>
+              <p className="support-number">Support: <a href="tel:+918619429514">+9186 194 29514</a></p>
               <p className="timing-text">Available 24/7 for critical issues.</p>
-              <button className="btn btn-primary-support">Call Now</button>
+              <a href="tel:+918619429514" className="btn btn-primary-support">Call Now</a>
             </div>
 
             <div className="support-option-card">
@@ -111,9 +112,9 @@ const Support = () => {
               </div>
               <h3>Email Support</h3>
               <p>For non-urgent inquiries or detailed requests.</p>
-              <p className="support-email"><a href="mailto:support@computerbite.com">support@computerbite.com</a></p>
+              <p className="support-email"><a href="mailto:computerbitejpr@gmail.com">computerbitejpr@gmail.com</a></p>
               <p className="timing-text">We aim to respond within 24 business hours.</p>
-              <button className="btn btn-secondary-support">Send Email</button>
+              <a href="mailto:computerbitejpr@gmail.com" className="btn btn-secondary-support">Send Email</a>
             </div>
           </div>
         </div>
@@ -168,9 +169,9 @@ const Support = () => {
           </p>
           <div className="emergency-contact-info">
             <p>Call our Emergency Hotline:</p>
-            <a href="tel:+919988776655" className="emergency-phone-btn">
+            <a href="tel:+918619429514" className="emergency-phone-btn">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2.05L16 22a2 2 0 0 1-2-2v-3.82a2 2 0 0 1 .57-1.43L19.23 10a2 2 0 0 1 2.54.43z"></path><path d="M10.5 2H5a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h5.5l.5-4a2 2 0 0 1-2-2V4a2 2 0 0 0-2-2z"></path></svg>
-              +91 99887 76655
+              +9186 194 29514
             </a>
           </div>
         </div>
@@ -185,8 +186,8 @@ const Support = () => {
               Get a personalized security consultation and discover how our solutions can protect your business
             </p>
             <div className="cta-buttons">
-              <button className="btn btn-white">Schedule Free Consultation</button>
-              <button className="btn btn-outline">View Our Portfolio</button>
+              <Link to="/contact#contact-form" className="btn btn-white">Schedule Free Consultation</Link>
+              <Link to="/products" className="btn btn-outline">View Our Portfolio</Link>
             </div>
           </div>
         </div>
